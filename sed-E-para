@@ -1,1 +1,1 @@
-s#(http.*github[^/]*/)#https://github\.crazypeace\.workers\.dev/\1#g
+s#(http.*github[^/]*/)#https://github.crazypeace.workers.dev/\1#g
