@@ -1,5 +1,13 @@
 # gh-proxy
 
+## 我的修改
+[增加支持 api.github.com](https://zelikk.blogspot.com/2023/03/github-proxy-api-github-com.html)
+
+方便在 `bash <(curl ...)` 语法中使用的 `perl -pe` 用法
+
+参考 https://zelikk.blogspot.com/2023/02/vps-github-proxy.html
+
+
 ## 简介
 
 github release、archive以及项目文件的加速项目，支持clone，有Cloudflare Workers无服务器版本以及Python版本
