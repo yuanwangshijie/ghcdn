@@ -5,9 +5,9 @@ function convert() {
   }
 
   ghproxy = document.querySelector("#ghproxy").value;
-  perlcmdbegin = ' | ' + document.querySelector("#perlcmd").value + ' "$(curl -L ';
+  perlcmdbegin = ' | perl -pe "$(curl -L ';
   perlcmdend = ')"';
-  perlrule = ghproxy + document.querySelector("#perlrule").value;
+  perlrule = ghproxy + 'perl-pe-para';
 
   // 先给裸的git类链接前面加上 https://
   inputStr = inputStr.replace(/ git/g, ' https://git');

@@ -1,1 +1,0 @@
-s#(curl.*?\.sh)([^/])#\1 | perl -pe "\$(curl -L https://github.crazypeace.workers.dev/perl-pe-para)" \2#g
