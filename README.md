@@ -3,10 +3,13 @@
 ## 我的修改
 [增加支持 api.github.com](https://zelikk.blogspot.com/2023/03/github-proxy-api-github-com.html)
 
-方便在 `bash <(curl ...)` 语法中使用的 `perl -pe` 用法
+做了工具页面, 方便使用 
+https://ghproxy.crazypeace.workers.dev/
 
-参考 https://zelikk.blogspot.com/2023/02/vps-github-proxy.html
+演示视频 
+https://youtu.be/F9re4Tuy7BA
 
+自建 github 代理教程 https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
 
 ## 简介
 
