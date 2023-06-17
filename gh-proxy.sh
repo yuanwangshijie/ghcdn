@@ -25,6 +25,8 @@ if [ $# -ge 1 ]; then
     perlrule='https://github.com/crazypeace/gh-proxy/raw/master/perl-pe-para'
     
     result=$(echo -n ${ghres} | sed -r "s#(bash.*curl.*)(https?:.*)(\).*)#\1${ghproxy}\2${perlcmdbegin}${ghproxy}${perlrule}${perlcmdend}\3#g")
+    # <<< 的用法
+    # result=$(sed -r "s#(bash.*curl.*)(https?:.*)(\).*)#\1${ghproxy}\2${perlcmdbegin}${ghproxy}${perlrule}${perlcmdend}\3#g" <<< ${ghres})
     
     echo ${result}
     
