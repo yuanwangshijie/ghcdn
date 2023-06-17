@@ -37,8 +37,6 @@ else
     echo
     echo "示例:"
     echo "修改前"
-    echo -e "bash <(curl -L https://raw.githubusercontent.com/P3TERX/warp.sh/main/warp.sh) 4"
-    echo "修改后"
     echo -e "${yellow}bash <(curl -L${none} ${green}https://raw.githubusercontent.com/crazypeace/warp.sh/main/warp.sh${none}${yellow}) 4${none}"
     echo "修改后"
     echo -e "${yellow}bash <(curl -L${none} ${cyan}https://github.crazypeace.workers.dev/${none}${green}https://raw.githubusercontent.com/crazypeace/warp.sh/main/warp.sh${none}${red} | perl -pe \"\$(curl -L${none} ${cyan}https://github.crazypeace.workers.dev/${none}${magenta}https://github.com/crazypeace/gh-proxy/raw/master/perl-pe-para${none}${red})\"${none}${yellow}) 4${none}"
