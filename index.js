@@ -30,7 +30,8 @@ const exp3 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:info|git-).*$/i
 const exp4 = /^(?:https?:\/\/)?raw\.(?:githubusercontent|github)\.com\/.+?\/.+?\/.+?\/.+$/i
 const exp5 = /^(?:https?:\/\/)?gist\.(?:githubusercontent|github)\.com\/.+?\/.+?\/.+$/i
 const exp6 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/tags.*$/i
-const exp7 = /^(?:https?:\/\/)?api\.github\.com\/.+?\/.+?\/.*$/i
+const exp7 = /^(?:https?:\/\/)?api\.github\.com\/.*$/i
+const exp8 = /^(?:https?:\/\/)?git\.io\/.*$/i
 
 /**
  * @param {any} body
@@ -78,13 +79,22 @@ async function fetchHandler(e) {
     const req = e.request
     const urlStr = req.url
     const urlObj = new URL(urlStr)
+    
+    console.log("in:" +urlStr)
+
     let path = urlObj.searchParams.get('q')
     if (path) {
         return Response.redirect('https://' + urlObj.host + PREFIX + path, 301)
     }
     // cfworker 会把路径中的 `//` 合并成 `/`
     path = urlObj.href.substr(urlObj.origin.length + PREFIX.length).replace(/^https?:\/+/, 'https://')
-    if (path.search(exp1) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp7) === 0) {
+
+    console.log ("path:" + path)
+
+    if (path.search(exp1) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp7) === 0 || path.search(exp8) === 0) {
+        
+        console.log("exp 1,3,4,5,6,7,8")
+
         return httpHandler(req, path)
     } else if (path.search(exp2) === 0) {
         if (Config.jsdelivr) {
@@ -98,6 +108,9 @@ async function fetchHandler(e) {
         const newUrl = path.replace(/(?<=com\/.+?\/.+?)\/(.+?\/)/, '@$1').replace(/^(?:https?:\/\/)?raw\.(?:githubusercontent|github)\.com/, 'https://cdn.jsdelivr.net/gh')
         return Response.redirect(newUrl, 302)
     } else {
+
+        console.log("fetch " + ASSET_URL + path)
+
         return fetch(ASSET_URL + path)
     }
 }
@@ -130,9 +143,12 @@ function httpHandler(req, pathname) {
     if (!flag) {
         return new Response("blocked", {status: 403})
     }
-    if (urlStr.startsWith('github')) {
+    if (urlStr.startsWith('git')) {
         urlStr = 'https://' + urlStr
     }
+
+    console.log("urlStr "+urlStr)
+
     const urlObj = newUrl(urlStr)
 
     /** @type {RequestInit} */
