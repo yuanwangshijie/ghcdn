@@ -31,7 +31,7 @@ if [ $# -ge 1 ]; then
 else
     echo "用法"
     echo -e "gh-proxy.sh \"${yellow}你要处理的github脚本${none}\" | bash"
-    echo -e "注意要用${red}双引号${none}包住${yellow}github${none}脚本"
+    echo -e "注意要用${red}双引号${none}包住${yellow}github脚本${none}"
     echo
     echo -e "教程 ${green}https://zelikk.blogspot.com/2023/02/vps-github-proxy.html${none}"
     echo
