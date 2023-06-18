@@ -13,7 +13,7 @@ function convert() {
   inputStr = inputStr.replace(/ git/g, ' https://git');
 
   // 再进行加github proxy的转换
-  regex = /(bash.*?curl.*?)(https?:\/\/.*?)(\).*)/s;
+  regex = /(bash.*?)(https?:\/\/.*?)(\).*)/s;
   replacement = '$1' + ghproxy + '$2' + perlcmdbegin + perlrule + perlcmdend + '$3';
 
   resultStr = inputStr.replace(regex, replacement);
