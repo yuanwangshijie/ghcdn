@@ -3,6 +3,8 @@
 ## 我的修改
 [增加支持 api.github.com](https://zelikk.blogspot.com/2023/03/github-proxy-api-github-com.html)
 
+增加支持 git.io
+
 做了工具页面, 方便使用 
 https://ghproxy.crazypeace.workers.dev/
 
