@@ -17,31 +17,45 @@
       <div class="input-group mb-3">
         <input type="text" class="form-control" id="githubScript" aria-describedby="basic-addon1" placeholder="例如 bash <(curl -L https://github.com/crazypeace/warp.sh/raw/main/warp.sh) 4">
       </div>
-
       <div class="input-group mb-3">
-        <button class="btn btn-primary" type="button" onclick='convert()' id="cvtBtn">转换</button>
+        <button class="btn btn-primary" type="button" onclick='convertScript()' id="cvtBtn">转换脚本</button>
       </div>
-
       <label>以下为转换后的命令, 请在命令行中执行</label>
       <div class="input-group mb-3">        
-        <input type="text" class="form-control" id="resultWithGhproxy" aria-describedby="basic-addon2" onfocus="this.select()">
+        <input type="text" class="form-control" id="scriptAfterGhproxy" aria-describedby="basic-addon2" onfocus="this.select()">
         <button class="btn btn-info" type="button" onclick='copyResult()' id="cpyBtn">复制</button>
       </div>  
+
       <div class="input-group mb-3">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/F9re4Tuy7BA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F9re4Tuy7BA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      
       </div>
+
       <label>如果我的workers免费额度用完了, 你可以自己在worker上搭gh-proxy. </label><label>参考<a href="https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html">https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html</a></label>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Github Proxy</span>
         </div>
         <input type="text" class="form-control" id="ghproxy" aria-describedby="basic-addon1" value="https://ghproxy.crazypeace.workers.dev/" >
-        <button class="btn btn-info" type="button" onclick='getLocalUrl()' id="localUrlBtn">本页</button>
+        <button class="btn btn-info" type="button" onclick='getLocalUrl()' id="localUrlBtn">使用本页</button>
       </div>
 
       <div class="card-footer">
         <span> <a href="https://github.com/crazypeace/gh-proxy/" target="_self">Fork me on GitHub</a> </span>
       </div>
+
+      <label>输入GitHub资源链接</label>
+      <div class="input-group mb-3">     
+        <input type="text" class="form-control" id="githubRes" aria-describedby="basic-addon1" placeholder="例如 https://github.com/crazypeace/warp.sh/raw/main/warp.sh">
+      </div>
+      <div class="input-group mb-3">
+        <button class="btn btn-primary" type="button" onclick='convertRes()' id="cvtBtn">转换资源</button>
+      </div>
+      <label>以下为转换后的链接</label>
+      <div class="input-group mb-3">        
+        <input type="text" class="form-control" id="resAfterGhproxy" aria-describedby="basic-addon2" onfocus="this.select()">
+        <button class="btn btn-info" type="button" onclick='fetchRes()' id="cpyBtn">获取</button>
+      </div>  
+
     </div>
   </div>
 
