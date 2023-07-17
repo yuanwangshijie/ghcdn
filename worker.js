@@ -23,7 +23,6 @@ const PREFLIGHT_INIT = {
     }),
 }
 
-
 const exp1 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive)\/.*$/i
 const exp2 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:blob|raw)\/.*$/i
 const exp3 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:info|git-).*$/i
@@ -86,9 +85,21 @@ async function fetchHandler(e) {
     if (path) {
         return Response.redirect('https://' + urlObj.host + PREFIX + path, 301)
     }
-    // cfworker 会把路径中的 `//` 合并成 `/`
-    path = urlObj.href.substr(urlObj.origin.length + PREFIX.length).replace(/^https?:\/+/, 'https://')
 
+    path = urlObj.href.substr(urlObj.origin.length + PREFIX.length)
+    console.log ("path:" + path)
+
+    // 判断有没有嵌套自己调用自己
+    const exp0 = 'https:/' + urlObj.host + '/'
+    console.log ("exp0:" + exp0)
+    while (path.startsWith(exp0)) {
+        console.log ("in while")
+        path = path.replace(exp0, '')
+    }
+    console.log ("path:" + path)
+
+    // cfworker 会把路径中的 `//` 合并成 `/`
+    path = path.replace(/^https?:\/+/, 'https://')
     console.log ("path:" + path)
 
     if (path.search(exp1) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp7) === 0 || path.search(exp8) === 0) {
