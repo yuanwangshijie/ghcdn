@@ -13,6 +13,8 @@ https://youtu.be/F9re4Tuy7BA
 
 自建 github 代理教程 https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
 
+在 Replit 上搭建的教程 https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
+
 ## 简介
 
 github release、archive以及项目文件的加速项目，支持clone，有Cloudflare Workers无服务器版本以及Python版本
