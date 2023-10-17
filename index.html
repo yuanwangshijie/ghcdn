@@ -21,9 +21,15 @@
         <button class="btn btn-primary" type="button" onclick='convertScript()' id="cvtBtn">转换脚本</button>
       </div>
       <label>以下为转换后的命令, 请在命令行中执行</label>
+      <label>如果只考虑处理一层脚本中github资源</label>
       <div class="input-group mb-3">        
-        <input type="text" class="form-control" id="scriptAfterGhproxy" aria-describedby="basic-addon2" onfocus="this.select()">
-        <button class="btn btn-info" type="button" onclick='copyResult()' id="cpyBtn">复制</button>
+        <input type="text" class="form-control" id="result2" aria-describedby="basic-addon2" onfocus="this.select()">
+        <button class="btn btn-info" type="button" onclick='copyResult2()'>复制</button>
+      </div>  
+      <label>如果github脚本里面嵌套调用了其它github脚本</label>
+      <div class="input-group mb-3">        
+        <input type="text" class="form-control" id="result1" aria-describedby="basic-addon2" onfocus="this.select()">
+        <button class="btn btn-info" type="button" onclick='copyResult1()'>复制</button>
       </div>  
 
       <div class="input-group mb-3">
@@ -54,7 +60,7 @@
       <label>以下为转换后的链接</label>
       <div class="input-group mb-3">        
         <input type="text" class="form-control" id="resAfterGhproxy" aria-describedby="basic-addon2" onfocus="this.select()">
-        <button class="btn btn-info" type="button" onclick='fetchRes()' id="cpyBtn">获取</button>
+        <button class="btn btn-info" type="button" onclick='fetchRes()'>获取</button>
       </div>  
 
     </div>

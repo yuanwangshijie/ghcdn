@@ -14,15 +14,23 @@ function convertScript() {
 
   // 再进行加github proxy的转换
   regex = /(bash.*?)(https?:\/\/.*?)(\).*)/s;
-  replacement = '$1' + ghproxy + '$2' + perlcmdbegin + perlrule + perlcmdend + '$3';
 
-  resultStr = inputStr.replace(regex, replacement);
+  replacement1 = '$1' + ghproxy + '$2' + perlcmdbegin + perlrule + perlcmdend + '$3';
+  resultStr1 = inputStr.replace(regex, replacement1);
+  document.querySelector("#result1").value = resultStr1;
 
-  document.querySelector("#scriptAfterGhproxy").value = resultStr;
+  replacement2 = '$1' + ghproxy + '$2' + '| perl -pe "s#(http.*?git[^/]*?/)#' + ghproxy + '\\1#g"' + '$3';
+  resultStr2 = inputStr.replace(regex, replacement2);
+  document.querySelector("#result2").value = resultStr2;
 }
 
-function copyResult() {
-  resultStr = document.querySelector("#scriptAfterGhproxy").value;
+function copyResult1() {
+  resultStr = document.querySelector("#result1").value;
+  navigator.clipboard.writeText(resultStr);
+}
+
+function copyResult2() {
+  resultStr = document.querySelector("#result2").value;
   navigator.clipboard.writeText(resultStr);
 }
 
