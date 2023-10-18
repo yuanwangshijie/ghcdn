@@ -22,7 +22,7 @@ function convertScript() {
     document.querySelector("#result1").value = resultStr1;
   }
 
-  replacement2 = '$1' + ghproxy + '$2' + '| perl -pe "s#(http.*?git[^/]*?/)#' + ghproxy + '\\1#g"' + '$3';
+  replacement2 = '$1' + ghproxy + '$2' + ' | perl -pe "s#(http.*?git[^/]*?/)#' + ghproxy + '\\1#g"' + '$3';
   resultStr2 = inputStr.replace(regex1, replacement2);
   if (resultStr2 !== inputStr) {
     document.querySelector("#result2").value = resultStr2;
