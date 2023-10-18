@@ -13,15 +13,17 @@ function convertScript() {
   inputStr = inputStr.replace(/ git/g, ' https://git');
 
   // 再进行加github proxy的转换
-  // 处理 bash <( curl xxx.sh) 或 bash <( wget -qO- -o- xxx.sh)
+  // 处理 bash <( curl xxx.sh) 或 bash <( wget -O- xxx.sh)
   regex1 = /(bash.*?)(https?:\/\/.*?)(\).*)/s;
 
+  // 考虑嵌套调用的情况
   replacement1 = '$1' + ghproxy + '$2' + perlcmdbegin + perlrule + perlcmdend + '$3';
   resultStr1 = inputStr.replace(regex1, replacement1);
   if (resultStr1 !== inputStr) {
     document.querySelector("#result1").value = resultStr1;
   }
 
+  // 只考虑处理一层Github脚本的情况
   replacement2 = '$1' + ghproxy + '$2' + ' | perl -pe "s#(http.*?git[^/]*?/)#' + ghproxy + '\\1#g"' + '$3';
   resultStr2 = inputStr.replace(regex1, replacement2);
   if (resultStr2 !== inputStr) {
