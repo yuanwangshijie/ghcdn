@@ -11,9 +11,9 @@ https://ghproxy.crazypeace.workers.dev/
 演示视频 
 https://youtu.be/F9re4Tuy7BA
 
-自建 github 代理教程 https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
+在 Cloudflare 的 worker 上自建 Github 代理 教程 https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
 
-在 Replit 上搭建的教程 https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
+在 Replit 上自建 Github 代理 教程 https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
 
 ## 简介
 
