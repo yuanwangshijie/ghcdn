@@ -13,21 +13,25 @@
     <div class="card-body">
       <h5 class="card-title"> </h5>
 
-      <label>输入你原本的GitHub脚本命令</label>
+      <label>输入你原本的GitHub脚本命令, 例如:</label>
+      <label>bash <(curl -L https://github.com/crazypeace/warp.sh/raw/main/warp.sh) 4</label>
+      <label>bash <(wget -qO- -o- https://git.io/v2ray.sh)</label>
+      <label>wget -O tcpx.sh "https://git.io/JYxKU" && chmod +x tcpx.sh && ./tcpx.sh</label>
+      <label>wget -N --no-check-certificate https://raw.githubusercontent.com/Misaka-blog/hysteria-install/main/hy2/hysteria.sh && bash hysteria.sh</label>
       <div class="input-group mb-3">
         <input type="text" class="form-control" id="githubScript" aria-describedby="basic-addon1" placeholder="例如 bash <(curl -L https://github.com/crazypeace/warp.sh/raw/main/warp.sh) 4">
       </div>
       <div class="input-group mb-3">
         <button class="btn btn-primary" type="button" onclick='convertScript()' id="cvtBtn">转换脚本</button>
+        <label>以下为转换后的命令, 请在命令行中执行</label>
       </div>
-      <label>以下为转换后的命令, 请在命令行中执行</label>
-      <label>如果只考虑处理一层脚本中github资源</label>
+      <label>如果只考虑处理一层脚本中GitHub资源</label>
       <div class="input-group mb-3">        
         <input type="text" class="form-control" id="result2" aria-describedby="basic-addon2" onfocus="this.select()">
         <button class="btn btn-info" type="button" onclick='copyResult2()'>复制</button>
       </div>  
-      <label>如果github脚本里面嵌套调用了其它github脚本</label>
-      <div class="input-group mb-3">        
+      <label>如果GitHub脚本里面嵌套调用了其它GitHub脚本</label>
+      <div class="input-group mb-3">
         <input type="text" class="form-control" id="result1" aria-describedby="basic-addon2" onfocus="this.select()">
         <button class="btn btn-info" type="button" onclick='copyResult1()'>复制</button>
       </div>  
@@ -38,6 +42,7 @@
 
       <label>如果我的workers免费额度用完了, 你可以<a href="https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html">自己在worker上搭gh-proxy.</a> </label><label>你也可以<a href="https://zelikk.blogspot.com/2022/05/domain-cloudflare-worker-dev.html">在workder上套自己的域名</a>解决国内访问的问题.</label>
       <label>还有一个解决国内访问的方法, 利用Replit域名没有被墙, <a href="https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html">在Replit上跑cloudflare的workers脚本 运行gh-proxy</a></label>
+      <label>本页面转换时用到的ghproxy</label>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Github Proxy</span>
@@ -46,11 +51,7 @@
         <button class="btn btn-info" type="button" onclick='getLocalUrl()' id="localUrlBtn">使用本页</button>
       </div>
 
-      <div class="card-footer">
-        <span> <a href="https://github.com/crazypeace/gh-proxy/" target="_self">Fork me on GitHub</a> </span>
-      </div>
-
-      <label>输入GitHub资源链接</label>
+      <label>简单的转换, 输入GitHub资源链接</label>
       <div class="input-group mb-3">     
         <input type="text" class="form-control" id="githubRes" aria-describedby="basic-addon1" placeholder="例如 https://github.com/crazypeace/warp.sh/raw/main/warp.sh">
       </div>
@@ -62,6 +63,10 @@
         <input type="text" class="form-control" id="resAfterGhproxy" aria-describedby="basic-addon2" onfocus="this.select()">
         <button class="btn btn-info" type="button" onclick='fetchRes()'>获取</button>
       </div>  
+
+      <div class="card-footer">
+        <span> <a href="https://github.com/crazypeace/gh-proxy/" target="_self">Fork me on GitHub</a> </span>
+      </div>
 
     </div>
   </div>
