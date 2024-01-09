@@ -73,3 +73,5 @@ function convertRes() {
 function fetchRes() {
   window.open(document.querySelector("#resAfterGhproxy").value);
 }
+
+getLocalUrl()
