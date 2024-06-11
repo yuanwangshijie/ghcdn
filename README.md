@@ -15,7 +15,9 @@ https://youtu.be/F9re4Tuy7BA
 
 在 Replit 上自建 Github 代理 教程 https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
 
-## 以下为原作者的README
+<details>
+    <summary>原项目readme (点击展开)</summary>
+  
 ## 简介
 
 github release、archive以及项目文件的加速项目，支持clone，有Cloudflare Workers无服务器版本以及Python版本
@@ -128,3 +130,4 @@ python版本默认走服务器（2021.3.27更新）
 
 [jsproxy](https://github.com/EtherDream/jsproxy/)
 
+</details>
