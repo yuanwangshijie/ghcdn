@@ -5,8 +5,8 @@ while true; do
 echo "我是脚本A"
 echo "假装这是一个菜单"
 echo -e "------------------------"
-echo -e "02.   调用脚本B▶"
-echo -e "03.   调用脚本C▶"
+echo -e "02.   调用脚本B ▶"
+echo -e "03.   调用脚本C ▶"
 echo -e "------------------------"
 read -p "请输入你的选择: " choice
 
