@@ -13,7 +13,6 @@ echo "假装这是一个菜单"
 echo -e "------------------------"
 echo -e "02.   调用脚本B▶"
 echo -e "03.   调用脚本C▶"
-echo -e "05.   BBR管理 ▶"
 echo -e "------------------------"
 echo -e "0.   退出脚本"
 echo -e "------------------------"
@@ -25,11 +24,7 @@ case $choice in
     ;;
 
   3)
-    bash <(curl -Ls https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
-    ;;
-    
-  5)
-    wget -O tcpx.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
+    bash <(wget -qO- -o- https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
     ;;
     
   0)
