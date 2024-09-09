@@ -21,11 +21,11 @@ read -p "请输入你的选择: " choice
 
 case $choice in
   1)
-    bash <(curl -Ls )
+    bash <(curl -Ls https://github.com/crazypeace/gh-proxy/raw/master/test-a.sh)
     ;;
 
   3)
-    bash <(curl -Ls )
+    bash <(curl -Ls https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
     ;;
     
   5)
