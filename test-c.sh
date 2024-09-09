@@ -9,8 +9,6 @@ echo -e "------------------------"
 echo -e "01.   调用脚本A▶"
 echo -e "02.   调用脚本B▶"
 echo -e "------------------------"
-echo -e "0.   退出脚本"
-echo -e "------------------------"
 read -p "请输入你的选择: " choice
 
 case $choice in
@@ -20,11 +18,6 @@ case $choice in
 
   2)
     bash <(wget -qO- -o- https://github.com/crazypeace/gh-proxy/raw/master/test-b.sh)
-    ;;
-    
-  0)
-    clear
-    exit
     ;;
 
   *)
