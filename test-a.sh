@@ -6,15 +6,12 @@ pause() {
 }
 
 while true; do
-clear
 
 echo "我是脚本A"
 echo "假装这是一个菜单"
 echo -e "------------------------"
 echo -e "02.   调用脚本B▶"
 echo -e "03.   调用脚本C▶"
-echo -e "------------------------"
-echo -e "0.   退出脚本"
 echo -e "------------------------"
 read -p "请输入你的选择: " choice
 
@@ -25,11 +22,6 @@ case $choice in
 
   3)
     bash <(wget -qO- -o- https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
-    ;;
-    
-  0)
-    clear
-    exit
     ;;
 
   *)
