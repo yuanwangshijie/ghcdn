@@ -31,6 +31,7 @@ const exp5 = /^(?:https?:\/\/)?gist\.(?:githubusercontent|github)\.com\/.+?\/.+?
 const exp6 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/tags.*$/i
 const exp7 = /^(?:https?:\/\/)?api\.github\.com\/.*$/i
 const exp8 = /^(?:https?:\/\/)?git\.io\/.*$/i
+const exp9 = /^(?:https?:\/\/)?gitlab\.com\/.*$/i
 
 /**
  * @param {any} body
@@ -63,7 +64,7 @@ addEventListener('fetch', e => {
 
 
 function checkUrl(u) {
-    for (let i of [exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8]) {
+    for (let i of [exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8, exp9]) {
         if (u.search(i) === 0) {
             return true
         }
