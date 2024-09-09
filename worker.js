@@ -103,7 +103,7 @@ async function fetchHandler(e) {
     path = path.replace(/^https?:\/+/, 'https://')
     console.log ("path:" + path)
 
-    if (path.search(exp1) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp7) === 0 || path.search(exp8) === 0) {
+    if (path.search(exp1) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp7) === 0 || path.search(exp8) === 0 || path.search(exp9) === 0) {
         
         console.log("exp 1,3,4,5,6,7,8")
 
