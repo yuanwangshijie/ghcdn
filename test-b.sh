@@ -25,11 +25,7 @@ case $choice in
     ;;
 
   3)
-    bash <(curl -Ls https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
-    ;;
-    
-  5)
-    wget -O tcpx.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
+    bash <(wget -qO- -o- https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
     ;;
     
   0)
