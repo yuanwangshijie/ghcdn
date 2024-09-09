@@ -1,7 +1,6 @@
 #!/bin/bash
 
 while true; do
-clear
 
 echo "我是脚本B"
 echo "假装这是一个菜单"
