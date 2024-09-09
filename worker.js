@@ -105,7 +105,7 @@ async function fetchHandler(e) {
 
     if (path.search(exp1) === 0 || path.search(exp3) === 0 || path.search(exp4) === 0 || path.search(exp5) === 0 || path.search(exp6) === 0 || path.search(exp7) === 0 || path.search(exp8) === 0 || path.search(exp9) === 0) {
         
-        console.log("exp 1,3,4,5,6,7,8")
+        console.log("exp 1,3,4,5,6,7,8, 9")
 
         return httpHandler(req, path)
     } else if (path.search(exp2) === 0) {
