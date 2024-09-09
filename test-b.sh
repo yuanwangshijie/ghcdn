@@ -2,6 +2,7 @@
 
 while true; do
 
+echo
 echo "我是脚本B"
 echo "假装这是一个菜单"
 echo -e "------------------------"
