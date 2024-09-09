@@ -16,7 +16,7 @@ function convertScript() {
   // 处理 bash <( curl xxx.sh) 或 bash <( wget -O- xxx.sh)
   regex1 = /(bash.*?)(https?:\/\/.*?)(\).*)/s;
 
-  // 考虑嵌套调用的情况
+  // 考虑github脚本嵌套调用的情况, 即A脚本调用B脚本, B脚本调用C脚本
   replacement1 = '$1' + ghproxy + '$2' + perlcmdbegin + perlrule + perlcmdend + '$3';
   resultStr1 = inputStr.replace(regex1, replacement1);
   if (resultStr1 !== inputStr) {
@@ -32,6 +32,15 @@ function convertScript() {
 
   // 处理 wget xxx.sh && bash xxx.sh 或 wget xxx.sh && chmod +x xxx.sh && ./xxx.sh
   regex2 = /(wget.*?)(https?:\/\/.*)(&&[^&]*[ /])(.*?sh)/s;
+  //replacement3 = '1 : $1 ; 2 : $2 ; 3 : $3 ; 4 : $4 ;'
+  replacement3 = '$1' + ghproxy + '$2' + '&& perl -i -pe "s#(http.*?git[^/]*?/)#' + ghproxy + '\\1#g" ' + '$4 $3$4';
+  resultStr2 = inputStr.replace(regex2, replacement3);
+  if (resultStr2 !== inputStr) {
+    document.querySelector("#result2").value = resultStr2;
+  }
+
+  // 处理 curl -sS -O xxx.sh && bash xxx.sh 或 curl -sS -O xxx.sh && chmod +x xxx.sh && bash xxx.sh 
+  regex2 = /^(curl.*?)(https?:\/\/.*)(&&[^&]*[ /])(.*?sh)/s;
   //replacement3 = '1 : $1 ; 2 : $2 ; 3 : $3 ; 4 : $4 ;'
   replacement3 = '$1' + ghproxy + '$2' + '&& perl -i -pe "s#(http.*?git[^/]*?/)#' + ghproxy + '\\1#g" ' + '$4 $3$4';
   resultStr2 = inputStr.replace(regex2, replacement3);
