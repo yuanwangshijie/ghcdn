@@ -1,10 +1,5 @@
 #!/bin/bash
 
-pause() {
-    read -rsp "$(echo -e "按 $green Enter 回车键 $none 继续....或按 $red Ctrl + C $none 取消.")" -d $'\n'
-    echo
-}
-
 while true; do
 clear
 
@@ -13,8 +8,6 @@ echo "假装这是一个菜单"
 echo -e "------------------------"
 echo -e "01.   调用脚本A▶"
 echo -e "03.   调用脚本C▶"
-echo -e "------------------------"
-echo -e "0.   退出脚本"
 echo -e "------------------------"
 read -p "请输入你的选择: " choice
 
@@ -27,11 +20,6 @@ case $choice in
     bash <(wget -qO- -o- https://github.com/crazypeace/gh-proxy/raw/master/test-c.sh)
     ;;
     
-  0)
-    clear
-    exit
-    ;;
-
   *)
     echo "无效的输入!"
     ;;
