@@ -8,8 +8,11 @@
 做了工具页面, 方便使用 
 https://ghproxy.crazypeace.workers.dev/
 
-演示视频 
+用法演示视频   
 https://youtu.be/F9re4Tuy7BA
+
+支持github脚本的无限嵌套调用 演示视频  
+https://youtu.be/5zCJsCoi_lQ
 
 在 Cloudflare 的 worker 上自建 Github 代理 教程 https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
 
