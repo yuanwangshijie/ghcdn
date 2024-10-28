@@ -14,9 +14,11 @@ https://youtu.be/F9re4Tuy7BA
 支持github脚本的无限嵌套调用 演示视频  
 https://youtu.be/5zCJsCoi_lQ
 
-在 Cloudflare 的 worker 上自建 Github 代理 教程 https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
+在 Cloudflare 的 worker 上自建 Github 代理 教程  
+https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
 
-在 Replit 上自建 Github 代理 教程 https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
+在 Replit 上自建 Github 代理 教程  
+https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
 
 <details>
     <summary>原项目readme (点击展开)</summary>
