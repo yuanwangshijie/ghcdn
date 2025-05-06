@@ -5,7 +5,7 @@
 
 增加支持 git.io
 
-做了工具页面, 方便使用 
+做了工具页面, 方便使用  
 https://ghproxy.crazypeace.workers.dev/
 
 其它演示站域名 (哪个能用就用哪个, 也许会被GFW屏蔽)  
