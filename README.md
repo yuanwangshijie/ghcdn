@@ -8,10 +8,10 @@
 做了工具页面, 方便使用 
 https://ghproxy.crazypeace.workers.dev/
 
-其它演示站域名 (哪个能用就用哪个, 也许会被GFW屏蔽)
-ghproxy.lvedong.eu.org
-ghproxy.icdyct.space
-ghproxy.icdyct.ggff.net
+其它演示站域名 (哪个能用就用哪个, 也许会被GFW屏蔽)  
+ghproxy.lvedong.eu.org  
+ghproxy.icdyct.space  
+ghproxy.icdyct.ggff.net  
 
 用法演示视频   
 https://youtu.be/F9re4Tuy7BA
