@@ -25,6 +25,9 @@ https://zelikk.blogspot.com/2023/06/gh-proxy-worker.html
 在 Replit 上自建 Github 代理 教程  
 https://zelikk.blogspot.com/2023/07/replit-gh-proxy.html
 
+处理嵌套github脚本的原理说明  
+https://zelikk.blogspot.com/search/label/ghproxy
+
 <details>
     <summary>原项目readme (点击展开)</summary>
   
