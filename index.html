@@ -11,7 +11,7 @@
  <body> 
   <div class="d-flex align-items-start flex-wrap">
   <div class="card shadow m-3"> 
-   <h5 class="card-header">转换GitHub资源</h5> 
+   <h5 class="card-header">转换GitHub资源链接</h5> 
    <div class="card-body"> 
     <h5 class="card-title"></h5> 
     <label>GitHub资源链接</label> 
@@ -30,23 +30,22 @@
   </div>  
 
   <div class="card shadow m-3"> 
-   <h5 class="card-header">转换GitHub一键脚本命令</h5> 
+   <h5 class="card-header">转换GitHub脚本</h5> 
    <div class="card-body"> 
     <h5 class="card-title"></h5> 
-    <label>输入你原本的GitHub脚本命令:</label> 
+    <label>GitHub脚本</label> 
     <div class="input-group mb-3"> 
      <input type="text" class="form-control" id="githubScript" aria-describedby="basic-addon1" placeholder="例如 bash <(curl -L https://github.com/crazypeace/warp.sh/raw/main/warp.sh) 4" /> 
     </div> 
     <div class="input-group mb-3"> 
      <button class="btn btn-primary" type="button" onclick="convertScript()" id="cvtBtn">转换脚本</button> 
     </div> 
-    <p>以下为转换后的一键脚本命令, 请在命令行中执行</p> 
-    <label>只处理一层脚本中GitHub资源</label> 
+    <label>转换后的脚本(不转换嵌套调用的其他脚本)</label> 
     <div class="input-group mb-3"> 
      <input type="text" class="form-control" id="result2" aria-describedby="basic-addon2" onfocus="this.select()" /> 
      <button class="btn btn-info" type="button" onclick="copyResult2()">复制</button> 
     </div> 
-    <label>处理GitHub脚本里面嵌套调用了其它GitHub脚本</label> 
+    <label>转换后的脚本(同时转换嵌套调用的其他脚本)</label> 
     <div class="input-group mb-3"> 
      <input type="text" class="form-control" id="result1" aria-describedby="basic-addon2" onfocus="this.select()" /> 
      <button class="btn btn-info" type="button" onclick="copyResult1()">复制</button> 
